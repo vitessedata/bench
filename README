@@ -1,3 +1,4 @@
+0. cd tpch-dbgen; make
 
 1. pytnon create.py 1m 
 	create tpch1m database for scale 1 tpch with money type
