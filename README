@@ -6,14 +6,15 @@
 	PGPORT
 	PGPASSWORD
 
-3. pytnon create.py 1m 
-	create tpch1m database for scale 1 tpch with money type
-	other possibilities are:
+3. pytnon create.py 1f 
+	create tpch1m database for scale 1 tpch with float8 type
+	possible values are:
 		1f: scale 1 with float8 type
 		1n: scale 1 with numeric type
-		10m: scale 10 with money type
+		1m: scale 1 with money type
 		10f: scale 10 with float8 type
 		10n: scale 10 with numeric type
+		10m: scale 10 with money type
 
-4. python run.py 1m
+4. python run.py 1f
 
