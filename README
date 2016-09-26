@@ -1,12 +1,14 @@
-1. cd tpch-dbgen; make
+1. git submodule init ; git submodule update
 
-2. (optional) set the env vars:
+2. cd tpch-dbgen; make
+
+3. (optional) set the env vars:
 	PGUSER
 	PGHOST
 	PGPORT
 	PGPASSWORD
 
-3. pytnon create.py 1f 
+4. python create.py 1f 
 	create tpch1m database for scale 1 tpch with float8 type
 	possible values are:
 		1f: scale 1 with float8 type
@@ -16,5 +18,5 @@
 		10n: scale 10 with numeric type
 		10m: scale 10 with money type
 
-4. python run.py 1f
+5. python run.py 1f
 
