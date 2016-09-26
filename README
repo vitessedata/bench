@@ -1,6 +1,6 @@
 1. git submodule init ; git submodule update
 
-2. cd tpch-dbgen; make
+2. cd tpch-dbgen; make clean; rm *.tbl; make
 
 3. (optional) set the env vars:
 	PGUSER
