@@ -9,7 +9,7 @@ if 1:
     parser = argparse.ArgumentParser()
     parser.add_argument('-v', '--verbose', help="turn on verbose mode", action="store_true")
     parser.add_argument('-s', '--single', help='single threaded', action='store_true')
-    parser.add_argument('DB', help='{1,10}[mnf]')
+    parser.add_argument('DB', help='{1,10,100}[mnf]')
     args = parser.parse_args()
     
     VERBOSE = args.verbose
@@ -23,7 +23,7 @@ if 1:
 
     SCALE,TYP = match.groups()
     SCALE = int(SCALE)
-    if SCALE not in [1, 10]:
+    if SCALE not in [1, 10, 100]:
         parser.print_help()
         sys.exit(1)
 
