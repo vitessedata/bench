@@ -50,6 +50,7 @@ MKVIEW = "mkview-%s.sql" % (TYP in "nf" and 'n' or 'm')
 
 print "1. dbgen %s" % SCALE
 if 1:  # dbgen
+    run("cd %s && rm -f *.tbl" % DBGENPATH)
     p = subprocess.Popen(['./dbgen', '-f', '-s', str(SCALE)], cwd=DBGENPATH)
     rc = p.wait()
     if rc:
@@ -80,3 +81,6 @@ for tab in TABLE:
 
 print "6. analyze"
 run("psql -q %s -c 'vacuum analyze'" % DB)
+
+print "7. cleanup"
+run("cd %s && rm -f *.tbl" % DBGENPATH)
