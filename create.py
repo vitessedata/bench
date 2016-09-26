@@ -48,8 +48,8 @@ def load(db, scale, tab):
 MKTAB = "mktab-%s.sql" % TYP
 MKVIEW = "mkview-%s.sql" % (TYP in "nf" and 'n' or 'm')
 
-print "1. dbgen %s" % SCALE
 if 1:  # dbgen
+    print "1. dbgen %s" % SCALE
     run("cd %s && rm -f *.tbl" % DBGENPATH)
     proc = []
     for opt in 'cLnOPSrs':
@@ -60,7 +60,6 @@ if 1:  # dbgen
         if rc:
             sys.exit('Cannot run dbgen -s %s in dir %s' % (SCALE, DBGENPATH))
 
-if 1:  # perl to remove last | 
     proc = []
     for t in TABLE:
         proc += [(t, subprocess.Popen(['perl', '-pi', '-e', 's/\|$//', '%s.tbl' % t], cwd=DBGENPATH))]
@@ -86,5 +85,6 @@ for tab in TABLE:
 print "6. analyze"
 run("psql -q %s -c 'vacuum analyze'" % DB)
 
-print "7. cleanup"
-run("cd %s && rm -f *.tbl" % DBGENPATH)
+if 0:
+    print "7. cleanup"
+    run("cd %s && rm -f *.tbl" % DBGENPATH)
