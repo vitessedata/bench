@@ -1,3 +1,7 @@
+0. Make sure you database is running. For postgres, you should
+   run the next steps on the database machine. For Greenplum DB 
+   or DeepGreen DB, run the next steps on the master machine.
+
 1. git clone git@github.com:cktan/bench.git
 
 2. cd bench
@@ -6,7 +10,9 @@
 
 4. (cd tpch-dbgen; make clean; rm *.tbl; make)
 
-5. set the env vars (optional):
+5. The create.py and run.py scripts make use of the createdb
+   and psql commands.   
+   If necessary, set the env vars so psql can connect to the DB:
 	PGUSER
 	PGHOST
 	PGPORT
