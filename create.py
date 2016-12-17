@@ -53,7 +53,7 @@ if 1:  # dbgen
     run("cd %s && rm -f *.tbl" % DBGENPATH)
     proc = []
     for opt in 'cLnOPSrs':
-        p = subprocess.Popen(['./dbgen', '-f', '-s', str(SCALE)], cwd=DBGENPATH)
+        p = subprocess.Popen(['./dbgen', '-f', '-s', str(SCALE), '-T', opt], cwd=DBGENPATH)
 	proc += [p]
     for p in proc:
         rc = p.wait()
