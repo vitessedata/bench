@@ -52,7 +52,7 @@ if 1:  # dbgen
     print "1. dbgen %s" % SCALE
     run("cd %s && rm -f *.tbl" % DBGENPATH)
     proc = []
-    for opt in 'cLnOPSrs':
+    for opt in 'clops':
         p = subprocess.Popen(['./dbgen', '-f', '-s', str(SCALE), '-T', opt], cwd=DBGENPATH)
 	proc += [p]
     for p in proc:
