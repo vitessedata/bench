@@ -67,6 +67,7 @@ Run the benchmark:
 ```
 
 A successful run will print out a tabulated result of 4 columns: 
+
 1. Query#
 2. Greenplum DB elapsed time
 3. Deepgreen DB elapsed time
